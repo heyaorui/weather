@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">天气通</string>
+    <string-array name="lifeStyle">
+        <item>穿衣指数</item>
+        <item>旅行指数</item>
+        <item>运动指数</item>
+        <item>舒适度指数</item>
+    </string-array>
 </resources>

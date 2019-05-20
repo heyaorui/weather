@@ -12,7 +12,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:text="风向风力"
-        android:textColor="#fff"
+        android:textColor="@color/textColor"
         android:textSize="20sp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,14 +32,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/wind_dir_text"
                     android:layout_gravity="center"
-                    android:textColor="#fff"
+                    android:textColor="@color/textColor"
                     android:textSize="40sp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="风向"
-                    android:textColor="#fff"/>
+                    android:textColor="@color/textColor"/>
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
@@ -56,14 +56,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/wind_sc_text"
                     android:layout_gravity="center"
-                    android:textColor="#fff"
+                    android:textColor="@color/textColor"
                     android:textSize="40sp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="风力"
-                    android:textColor="#fff"/>
+                    android:textColor="@color/textColor"/>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

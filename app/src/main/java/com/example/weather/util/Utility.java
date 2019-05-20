@@ -84,4 +84,47 @@ public class Utility {
         }
         return null;
     }
+    /*解析Suggest*/
+    public static boolean handleSuggestResponse(String response){
+        if(!TextUtils.isEmpty(response)){
+            try{
+                JSONArray allSuggest=new JSONArray(response);
+                for(int i=0;i<allSuggest.length();i++){
+                    JSONObject suggestJSONObject=allSuggest.getJSONObject(i);
+                    Suggest suggest=new Suggest();
+                    suggest.setName(suggestJSONObject.getString("name"));
+                    suggest.setSelected(suggestJSONObject.getBoolean("selected"));
+                    suggest.save();
+                }
+                return true;
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+    /*解析SuggestGrade*/
+    public static boolean handleSuggestGradeResponse(String response){
+        if(!TextUtils.isEmpty(response)){
+            try{
+                JSONArray allSuggestGrade=new JSONArray(response);
+                for(int i=0;i<allSuggestGrade.length();i++){
+                    JSONObject suggestJSONObject=allSuggestGrade.getJSONObject(i);
+                    String suggestContent=suggestJSONObject.toString();
+                    Bean bean=new Gson().fromJson(suggestContent,Bean.class);
+
+                    SuggestGrade suggestGrade=new SuggestGrade();
+                    suggestGrade.setType(bean.getSuggest().getName());
+                    suggestGrade.setBrf(bean.getBrf());
+                    suggestGrade.setTxt(bean.getTxt());
+                    suggestGrade.setTerm(bean.getTerm());
+                    suggestGrade.save();
+                }
+                return true;
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
